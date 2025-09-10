@@ -23,7 +23,7 @@ pipeline {
         stage('Despliegue') {
             steps {
                 echo "🚀 Iniciando despliegue de la app Flask..."
-                bat 'start "" "C:/Users/Usuario/AppData/Local/Programs/Python/Python312/python.exe" app.py'
+                bat '"C:/Users/Usuario/AppData/Local/Programs/Python/Python312/python.exe" app.py'
             }
         }
     }
