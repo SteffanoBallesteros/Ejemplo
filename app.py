@@ -25,7 +25,16 @@ def home():
     balance = ingresos - egresos
 
     return render_template("index.html", registros=registros, balance=balance)
-    
+
+#agregado
+@app.route("/add", methods=["POST"])
+def add_item():
+    data = request.get_json()
+    item = data.get("item")
+    monto = data.get("monto")
+    # Aquí podrías guardar en memoria o base de datos, de momento devolvemos éxito
+    return {"mensaje": f"{item} agregado con monto {monto}"}, 201
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
